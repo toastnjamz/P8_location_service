@@ -2,41 +2,35 @@ package tourGuide.controller;
 
 import com.jsoniter.output.JsonStream;
 import gpsUtil.location.VisitedLocation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import tourGuide.domain.user.User;
 import tourGuide.service.LocationService;
-import tourGuide.service.UserService;
+
+import java.util.UUID;
 
 @RestController
 public class LocationController {
 
     @Autowired
     private LocationService locationService;
+    private final Logger logger = LoggerFactory.getLogger(LocationController.class);
 
-    @Autowired
-    private UserService userService;
 
-    @RequestMapping("/location")
-    public String getLocation(@RequestParam String userName) {
-        VisitedLocation visitedLocation = locationService.getUserLocation(getUser(userName));
+    @RequestMapping("/user-location")
+    public String getUserLocation(@RequestParam String userID) {
+        VisitedLocation visitedLocation = locationService.getUserLocation(UUID.fromString(userID));
+        logger.debug("Request made to getUserLocation");
         return JsonStream.serialize(visitedLocation.location);
     }
 
-    @RequestMapping("/all-current-locations")
-    public String getAllCurrentLocations() {
-        return JsonStream.serialize(locationService.getAllUsersLocations());
+    @RequestMapping("/attractions")
+    public String getAttractions() {
+        logger.debug("Request made to getAttractions");
+        return JsonStream.serialize(locationService.getAttractions());
     }
 
-    @RequestMapping("/nearby-attractions")
-    public String getNearbyAttractions(@RequestParam String userName) {
-        VisitedLocation visitedLocation = locationService.getUserLocation(getUser(userName));
-        return JsonStream.serialize(locationService.getClosestAttractions(visitedLocation));
-    }
-
-    private User getUser(String userName) {
-        return userService.getUser(userName);
-    }
 }
