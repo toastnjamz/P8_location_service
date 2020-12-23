@@ -21,12 +21,20 @@ public class LocationService {
         this.gpsUtil = gpsUtil;
     }
 
-    public VisitedLocation getUserLocation(UUID userID) {
-        return gpsUtil.getUserLocation(userID);
+    public VisitedLocation getUserLocation(UUID userId) {
+        return gpsUtil.getUserLocation(userId);
     }
 
     public List<Attraction> getAttractions() {
         return gpsUtil.getAttractions();
     }
+
+//    public List<UUID> getAttractionIds() {
+//        List<UUID> attractionIds = new ArrayList<>();
+//        for (Attraction attraction : gpsUtil.getAttractions()) {
+//            attractionIds.add(attraction.attractionId);
+//        }
+//        return attractionIds;
+//    }
 
 }
