@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import tourGuide.domain.AttractionListWrapper;
 import tourGuide.service.LocationService;
 
-import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -34,10 +33,5 @@ public class LocationController {
         logger.debug("Request made to getAttractions");
         return attractionListWrapper;
     }
-
-//    @RequestMapping("/attractionIds")
-//    public List<UUID> getAttractionIds() {
-//        return locationService.getAttractionIds();
-//    }
 
 }
