@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b0a1450-bcfe-4462-a10f-4d320ec652df" name="Default Changelist" comment="" />
+    <list default="true" id="0b0a1450-bcfe-4462-a10f-4d320ec652df" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/TourGuide/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TourGuide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TourGuide/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
